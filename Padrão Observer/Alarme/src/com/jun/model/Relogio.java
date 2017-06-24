@@ -1,11 +1,17 @@
 package com.jun.model;
 
-public class Relogio implements Runnable {
+import java.util.ArrayList;
+import java.util.List;
+import com.jun.observer.Observer;
+import com.jun.observer.Subject;
+
+public class Relogio implements Runnable, Subject {
 
 	private int hora;
 	private int minuto;
 	private int segundo;
 	private boolean ligar = false;
+	List<Observer> Obsevadores = new ArrayList<Observer>();
 	
 	/**Construdor que já define a hora */
 	public Relogio(int h,int m,int s) {
@@ -23,7 +29,14 @@ public class Relogio implements Runnable {
 	
 	
 	public String toString(){
-		return  getHora()+":"+getMinuto()+":"+getSegundo();
+		String alarme = "";
+		for(Observer o : Obsevadores){
+			String s = ((Display)o).disparaAlarme();
+			if(!s.equals("")){
+				alarme += s+" ";
+			}
+		}
+		return  getHora()+":"+getMinuto()+":"+getSegundo()+" "+alarme;
 	
 	}
 	/**
@@ -75,6 +88,7 @@ public class Relogio implements Runnable {
 		ligar = true;
 	}
 	
+	
 	private void funcionamento_interno_do_relogio(){
 		
 		while(ligar){
@@ -91,13 +105,34 @@ public class Relogio implements Runnable {
 				}
 					
 			}
+			this.notifyObservers();
 		}
 	}
 
 
+
+	public void registerObserver(Observer o) {
+		// TODO Auto-generated method stub
+		Obsevadores.add(o);
+	}
+
+	public void removeObserver(Observer o) {
+		// TODO Auto-generated method stub
+		Obsevadores.remove(o);
+	}
+
+	public void notifyObservers() {
+		// TODO Auto-generated method stub
+		for(Observer o : Obsevadores)
+			o.update(hora, minuto, segundo);
+	}
+
 	public void run() {
+		// TODO Auto-generated method stub
 		funcionamento_interno_do_relogio();
 	}
+
+
 	
 	
 	
