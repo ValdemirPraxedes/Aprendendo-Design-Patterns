@@ -42,4 +42,6 @@ public abstract class Avatar {
 	public void setGenero(GENERO genero) {
 		Genero = genero;
 	}; 
+	
+	public abstract String getDescricao(); 
 }
