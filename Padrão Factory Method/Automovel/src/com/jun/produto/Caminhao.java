@@ -1,6 +1,6 @@
 package com.jun.produto;
 
-public class Caminhao extends Automovel {
+ class Caminhao extends Automovel {
 
 	@Override
 	public String descricao() {

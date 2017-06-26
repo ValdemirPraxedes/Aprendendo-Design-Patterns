@@ -1,10 +1,7 @@
-package com.jun.criador;
+package com.jun.produto;
 
-import com.jun.produto.Automovel;
+import com.jun.criador.Fabrica;
 import com.jun.produto.Automovel.AUTOMOVEL;
-import com.jun.produto.Caminhao;
-import com.jun.produto.Carro;
-import com.jun.produto.Moto;
 
 public class FabricaAutomovel extends Fabrica {
 
@@ -21,5 +18,7 @@ public class FabricaAutomovel extends Fabrica {
 		}
 		return null;
 	}
+
+	
 
 }
