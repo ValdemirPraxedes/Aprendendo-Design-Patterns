@@ -9,5 +9,5 @@ Aplicado no projeto: <a href="https://github.com/ValdemirPraxedes/Aprendendo-Des
  Aplicado no projeto: <a href="https://github.com/ValdemirPraxedes/Aprendendo-Design-Patterns/tree/master/Padr%C3%A3o%20Decorator/Avatar">Avatar</a><br><br>
  
  # Padrão Factory Method
-  Define uma interface para criar um objeto, mas permite às classes decidir qual classe instanciar. O Factory Method permite a uma classe deferir a instanciação para subclasses.
+  Define uma interface para criar um objeto, mas permite às classes decidir qual classe instanciar. O Factory Method permite a uma classe deferir a instanciação para subclasses.<br><br>
   Aplicado no projeto: <a href="https://github.com/ValdemirPraxedes/Aprendendo-Design-Patterns/tree/master/Padr%C3%A3o%20Factory%20Method/Automovel">Automovel</a><br><br>
